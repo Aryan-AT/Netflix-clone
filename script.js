@@ -1,7 +1,4 @@
-const splash = document.getElementById("splash");
-const mainContent = document.getElementById("main-content");
-
-splash.addEventListener("click", () => {
-  splash.style.display = "none";
-  mainContent.style.display = "block";
-});
+document.getElementById("openSite").onclick = () => {
+  document.getElementById("splash").style.display = "none";
+  document.getElementById("main").style.display = "block";
+};
