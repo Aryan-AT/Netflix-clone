@@ -1,168 +1,31 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-background:#000;
-color:white;
+/* Splash screen */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
 }
 
-/* PROFILES */
-
-#profiles{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+/* Image */
+#splash img {
+  max-width: 80%;
+  height: auto;
 }
 
-.profile-row{
-display:flex;
-gap:40px;
-margin-top:40px;
-}
-
-.profile{
-text-align:center;
-cursor:pointer;
-}
-
-.profile img{
-width:140px;
-border-radius:10px;
-border:3px solid transparent;
-}
-
-.profile:hover img{
-border-color:#e50914;
-}
-
-/* NAV */
-
-.nav{
-position:fixed;
-top:0;
-width:100%;
-padding:15px 60px;
-display:flex;
-z-index:10;
-}
-
-.logo{
-color:#e50914;
-font-size:26px;
-margin-right:40px;
-}
-
-nav a{
-margin-right:20px;
-color:#ccc;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-position:relative;
-overflow:hidden;
-}
-
-.hero-slide{
-position:absolute;
-width:100%;
-height:100%;
-background-size:cover;
-background-position:center;
-opacity:0;
-transition:.6s;
-display:flex;
-align-items:flex-end;
-padding:80px;
-}
-
-.hero-slide.active{
-opacity:1;
-}
-
-.fade{
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(to right,#000 40%,transparent);
-}
-
-.hero-text{
-position:relative;
-max-width:600px;
-}
-
-.hero-text h1{
-font-size:48px;
-}
-
-.hero-text button{
-margin-top:20px;
-padding:10px 20px;
-border:none;
-}
-
-.green{color:#46d369;}
-
-/* HERO ARROWS */
-
-.arrow{
-position:absolute;
-top:50%;
-font-size:60px;
-cursor:pointer;
-padding:20px;
-}
-
-.left{left:0;}
-.right{right:0;}
-
-/* ROW */
-
-.section{
-padding:40px 60px;
-}
-
-.row-wrap{
-display:flex;
-align-items:center;
-}
-
-.row{
-display:flex;
-gap:14px;
-overflow-x:auto;
-scroll-behavior:smooth;
-}
-
-.row::-webkit-scrollbar{display:none;}
-
-.card{
-min-width:220px;
-transition:.3s;
-}
-
-.card img,.card video{
-width:100%;
-border-radius:8px;
-}
-
-.card:hover{
-transform:scale(1.12);
-}
-
-.row-arrow{
-background:none;
-color:white;
-font-size:40px;
-border:none;
-cursor:pointer;
+/* Hide main content initially */
+#main-content {
+  display: none;
+  padding: 40px;
+  text-align: center;
 }
