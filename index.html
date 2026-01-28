@@ -1,94 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Kahaania Clone</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- WHO'S WATCHING -->
-
-<div id="profiles">
-
-<h1>Who's watching?</h1>
-
-<div class="profile-row">
-  <div class="profile" onclick="startApp()">
-    <img src="media/p1.jpg">
-    <p>Akhil</p>
+  <!-- Splash Screen -->
+  <div id="splash">
+    <img src="cc904c0e-bf00-4bb6-9d1d-35c793167c60.png" alt="Profile" />
   </div>
-  <div class="profile" onclick="startApp()">
-    <img src="media/p2.jpg">
-    <p>Anushka</p>
+
+  <!-- Main Website Content -->
+  <div id="main-content">
+    <h1>Welcome to the Website 🎉</h1>
+    <p>Your website content goes here.</p>
   </div>
-</div>
 
-</div>
-
-<!-- MAIN APP -->
-
-<div id="app">
-
-<header class="nav">
-  <div class="logo">KAHAANIA</div>
-  <nav>
-    <a>Home</a><a>Series</a><a>Movies</a>
-    <a>Games</a><a>Popular</a><a>My List</a>
-  </nav>
-</header>
-
-<!-- HERO SLIDER -->
-
-<section class="hero">
-
-<div class="arrow left" onclick="prevHero()">❮</div>
-<div class="arrow right" onclick="nextHero()">❯</div>
-
-<div class="hero-slide active" style="background-image:url(media/hero1.jpg)">
-  <div class="fade"></div>
-  <div class="hero-text">
-    <h1>The Day We Got Societal & Legal Approval</h1>
-    <p><span class="green">98% Match</span> • 2026 • 1 Season</p>
-    <p>Love officially approved by everyone ❤️</p>
-    <button>▶ Play</button>
-  </div>
-</div>
-
-<div class="hero-slide" style="background-image:url(media/hero2.jpg)">
-  <div class="fade"></div>
-  <div class="hero-text">
-    <h1>The Early Audition Days</h1>
-    <p><span class="green">98% Match</span> • 2026</p>
-    <p>Where it all started ✨</p>
-    <button>▶ Play</button>
-  </div>
-</div>
-
-</section>
-
-<!-- ROW -->
-
-<div class="section">
-<h2>Memories</h2>
-
-<div class="row-wrap">
-<button class="row-arrow" onclick="scrollRow(-1)">❮</button>
-
-<div class="row" id="row1">
-  <div class="card"><img src="media/p1.jpg"></div>
-  <div class="card"><img src="media/p2.jpg"></div>
-  <div class="card"><video src="media/video1.mp4" autoplay muted loop></video></div>
-  <div class="card"><img src="media/p1.jpg"></div>
-</div>
-
-<button class="row-arrow" onclick="scrollRow(1)">❯</button>
-</div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
