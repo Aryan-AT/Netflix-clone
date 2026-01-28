@@ -2,25 +2,40 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Netflix Clone</title>
+<title>MyFlix</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>MyFlix</h1>
+<header class="nav">
+  <h1 class="logo">MyFlix</h1>
 </header>
 
-<!-- HERO VIDEO -->
+<!-- HERO -->
 <section class="hero">
-  <video id="mainVideo" controls autoplay muted loop>
+
+  <video id="mainVideo" autoplay muted loop>
     <source src="videos/main.mp4" type="video/mp4">
   </video>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>This was meant to happen</h1>
+    <p>A beautiful story of life and memories.</p>
+
+    <div class="buttons">
+      <button class="play">▶ Play</button>
+      <button class="info">ℹ More Info</button>
+    </div>
+  </div>
+
 </section>
 
-<!-- SERIES 1 -->
+<!-- ROW 1 -->
 <section class="row">
 <h2>TikTok Series</h2>
+
 <div class="slider">
 
 <div class="card" onclick="playVideo('videos/tiktok1.mp4')">
@@ -38,9 +53,10 @@
 </div>
 </section>
 
-<!-- SERIES 2 -->
+<!-- ROW 2 -->
 <section class="row">
 <h2>Funny Moments</h2>
+
 <div class="slider">
 
 <div class="card" onclick="playVideo('videos/series2_1.mp4')">
@@ -50,18 +66,6 @@
 <div class="card" onclick="playVideo('videos/series2_2.mp4')">
 <img src="thumbnails/s2_2.jpg">
 </div>
-
-</div>
-</section>
-
-<!-- FILLER SECTION -->
-<section class="row">
-<h2>More Videos</h2>
-<div class="slider filler">
-
-<div class="empty"></div>
-<div class="empty"></div>
-<div class="empty"></div>
 
 </div>
 </section>
