@@ -1,74 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>MyFlix</title>
+<title>Kahaania Clone</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- WHO'S WATCHING -->
+
+<div id="profiles">
+
+<h1>Who's watching?</h1>
+
+<div class="profile-row">
+  <div class="profile" onclick="startApp()">
+    <img src="media/p1.jpg">
+    <p>Akhil</p>
+  </div>
+  <div class="profile" onclick="startApp()">
+    <img src="media/p2.jpg">
+    <p>Anushka</p>
+  </div>
+</div>
+
+</div>
+
+<!-- MAIN APP -->
+
+<div id="app">
+
 <header class="nav">
-  <h1 class="logo">MyFlix</h1>
+  <div class="logo">KAHAANIA</div>
+  <nav>
+    <a>Home</a><a>Series</a><a>Movies</a>
+    <a>Games</a><a>Popular</a><a>My List</a>
+  </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO SLIDER -->
+
 <section class="hero">
 
-  <video id="mainVideo" autoplay muted loop>
-    <source src="videos/main.mp4" type="video/mp4">
-  </video>
+<div class="arrow left" onclick="prevHero()">❮</div>
+<div class="arrow right" onclick="nextHero()">❯</div>
 
-  <div class="overlay"></div>
-
-  <div class="hero-content">
-    <h1>This was meant to happen</h1>
-    <p>A beautiful story of life and memories.</p>
-
-    <div class="buttons">
-      <button class="play">▶ Play</button>
-      <button class="info">ℹ More Info</button>
-    </div>
+<div class="hero-slide active" style="background-image:url(media/hero1.jpg)">
+  <div class="fade"></div>
+  <div class="hero-text">
+    <h1>The Day We Got Societal & Legal Approval</h1>
+    <p><span class="green">98% Match</span> • 2026 • 1 Season</p>
+    <p>Love officially approved by everyone ❤️</p>
+    <button>▶ Play</button>
   </div>
+</div>
+
+<div class="hero-slide" style="background-image:url(media/hero2.jpg)">
+  <div class="fade"></div>
+  <div class="hero-text">
+    <h1>The Early Audition Days</h1>
+    <p><span class="green">98% Match</span> • 2026</p>
+    <p>Where it all started ✨</p>
+    <button>▶ Play</button>
+  </div>
+</div>
 
 </section>
 
-<!-- ROW 1 -->
-<section class="row">
-<h2>TikTok Series</h2>
+<!-- ROW -->
 
-<div class="slider">
+<div class="section">
+<h2>Memories</h2>
 
-<div class="card" onclick="playVideo('videos/tiktok1.mp4')">
-<img src="thumbnails/tiktok1.jpg">
+<div class="row-wrap">
+<button class="row-arrow" onclick="scrollRow(-1)">❮</button>
+
+<div class="row" id="row1">
+  <div class="card"><img src="media/p1.jpg"></div>
+  <div class="card"><img src="media/p2.jpg"></div>
+  <div class="card"><video src="media/video1.mp4" autoplay muted loop></video></div>
+  <div class="card"><img src="media/p1.jpg"></div>
 </div>
 
-<div class="card" onclick="playVideo('videos/tiktok2.mp4')">
-<img src="thumbnails/tiktok2.jpg">
-</div>
-
-<div class="card" onclick="playVideo('videos/tiktok3.mp4')">
-<img src="thumbnails/tiktok3.jpg">
-</div>
-
-</div>
-</section>
-
-<!-- ROW 2 -->
-<section class="row">
-<h2>Funny Moments</h2>
-
-<div class="slider">
-
-<div class="card" onclick="playVideo('videos/series2_1.mp4')">
-<img src="thumbnails/s2_1.jpg">
-</div>
-
-<div class="card" onclick="playVideo('videos/series2_2.mp4')">
-<img src="thumbnails/s2_2.jpg">
+<button class="row-arrow" onclick="scrollRow(1)">❯</button>
 </div>
 
 </div>
-</section>
+
+</div>
 
 <script src="script.js"></script>
 </body>
