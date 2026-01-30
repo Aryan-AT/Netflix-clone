@@ -82,10 +82,16 @@ document.querySelectorAll(".card").forEach(card => {
   });
 
   card.addEventListener("click", () => {
-    const src = card.getAttribute("data-video");
-    document.getElementById("video").src = src;
-    document.getElementById("videoPlayer").style.display = "flex";
-    document.getElementById("video").play();
-  });
+
+  const cardVideo = card.querySelector("video source").src;
+
+  const mainVideo = document.getElementById("video");
+
+  mainVideo.src = cardVideo;
+  document.getElementById("videoPlayer").style.display = "flex";
+  mainVideo.play();
+
 });
+});
+
 
