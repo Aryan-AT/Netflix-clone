@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Movies • Netflix Style</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #141414;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+  z-index: 10;
+}
+
+.logo {
+  color: #e50914;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+nav {
+  margin-left: 40px;
+}
+
+nav a {
+  margin: 0 12px;
+  color: #ccc;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  color: white;
+}
+
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  gap: 16px;
+}
+
+.profile-icon {
+  background: red;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HERO */
+.hero {
+  height: 60vh;
+  background:
+    linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2)),
+    url("images/disney.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px;
+}
+
+.hero h1 {
+  font-size: 56px;
+}
+
+/* MOVIE ROW */
+.row {
+  padding: 40px 60px;
+}
+
+.row h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+/* MOVIE CARD */
+.movie-card {
+  width: 200px;
+  height: 300px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.movie-card p {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+/* VIDEO OVERLAY */
+#playerOverlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#playerOverlay video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: black;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 32px;
+  cursor: pointer;
+  color: white;
+  z-index: 1000;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Saniya Ke Kahaniya</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="series.html">Series</a>
+    <a href="movies.html" class="active">Movies</a>
+    <a href="games.html">Games</a>
+    <a href="popular.html">Popular</a>
+    <a href="mylist.html">My List</a>
+  </nav>
+  <div class="nav-right">
+    <div class="profile-icon">😊</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Disney Movie</h1>
+</section>
+
+<!-- MOVIE SECTION -->
+<section class="row">
+  <h2>Movies</h2>
+
+  <div class="movie-card" id="openMovie">
+    <img src="images/disney.jpg" alt="Movie Poster">
+    <p>Disney Movie • 2026</p>
+  </div>
+</section>
+
+<!-- VIDEO PLAYER -->
+<div id="playerOverlay">
+  <span id="closeBtn">✕</span>
+  <video id="moviePlayer" controls>
+    <source src="videos/movie.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+
+<script>
+const openMovie = document.getElementById("openMovie");
+const overlay = document.getElementById("playerOverlay");
+const video = document.getElementById("moviePlayer");
+const closeBtn = document.getElementById("closeBtn");
+
+// Open movie
+openMovie.onclick = () => {
+  overlay.style.display = "flex";
+  video.play();
+};
+
+// Close movie
+closeBtn.onclick = () => {
+  video.pause();
+  video.currentTime = 0;
+  overlay.style.display = "none";
+};
+
+// ESC key closes player
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    video.pause();
+    overlay.style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

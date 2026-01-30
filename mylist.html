@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Bucket List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* RESET & BODY */
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;}
+    body {background: #141414; color: white;}
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .navbar.scrolled {
+	  background: rgba(20, 20, 20, 0.96);
+          backdrop-filter: blur(6px);
+	}
+
+    .navbar .logo {color: #e50914; font-size: 28px; font-weight: bold;}
+    .navbar nav {margin-left: 40px;}
+    .navbar nav a {
+      margin: 0 12px;
+      color: #ccc;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .navbar nav a:hover, .navbar nav a.active {color: white;}
+    .nav-right {margin-left: auto; display: flex; align-items: center; gap: 18px;}
+    .profile-icon {
+      background: red;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+
+.navbar nav a {
+  position: relative;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #e50914;
+  transition: width 0.3s ease;
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+  width: 100%;
+}
+
+
+    /* HERO */
+   .hero {
+  height: 45vh;
+  background:
+    linear-gradient(to top, rgba(20,20,20,1), rgba(20,20,20,0.3)),
+    linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.1)),
+    url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1600") center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 60px 50px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+    /* GRID FOR BUCKET LIST */
+    .bucket-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 60px;
+  padding: 80px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+    .bucket-card {
+  position: relative;
+  background: #141414;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transform-origin: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.bucket-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1));
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.bucket-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bucket-card video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.bucket-card:hover video {
+  opacity: 1;
+}
+
+.bucket-card p {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  z-index: 2;
+}
+
+.bucket-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+  z-index: 5;
+}
+
+.bucket-card:hover img {
+  transform: scale(1.15);
+}
+
+.bucket-card:nth-child(n) {
+  animation-delay: calc(var(--i) * 0.08s);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    /* SPACING BELOW HERO */
+    body::after {content: ""; display: block; height: 60px;}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Saniya Ke Kahaniya</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="series.html">Series</a>
+      <a href="movies.html">Movies</a>
+      <a href="games.html">Games</a>
+      <a href="popular.html">Popular</a>
+      <a href="#" class="active">My List</a>    
+    </nav>
+    <div class="nav-right">
+      <span class="profile-icon">😊</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>My Bucket List</h1>
+  </section>
+
+  <!-- BUCKET LIST GRID -->
+  <section class="bucket-list">
+
+    <div class="bucket-card" style="--i:1" data-link="https://www.youtube.com/watch?v=DT68RZFYnoo"><img src="https://japankart.com/cms/wp-content/uploads/2024/11/DSCF2863-scaled.jpg" alt="kart"> <video muted loop preload="none">
+    <source src="VIDEO_LINK" type="video/mp4">
+  </video><p><B>Click Me!!!</B><br>Mario Kart racing in Japan</p></div>
+
+    <div class="bucket-card" style="--i:1" data-link="https://www.youtube.com/watch?v=BmMLlhvFuRU"><img src="https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/hbmfgeueohj4ihjv5aao.jpg" alt="Skydiving"><video muted loop preload="none">
+    <source src="VIDEO_LINK" type="video/mp4">
+  </video><p><B>Click Me!!!</B><br>Sydiving Dubai</p></div>
+
+    <div class="bucket-card" style="--i:1" data-link="https://www.youtube.com/shorts/tyzBkutVwB8"><img src="https://cdn.prod.website-files.com/648abfb52ab1776a4af3099e/66265375be9b70de9559ced1_aranybastya-fuggokert-panorama.jpg" alt="Italy"><video muted loop preload="none">
+    <source src="VIDEO_LINK" type="video/mp4">
+  </video><p><B>Click Me!!!</B><br>Pizza in Italy</p></div>
+
+    <div class="bucket-card" style="--i:1" data-link="https://www.youtube.com/shorts/1mXQaSA3-rE"><img src="https://www.surfer.com/.image/w_3840,q_auto:good,c_limit/MjA3OTQzMzQxNTgwNTYwMTMz/tipijabrik_timh8163.jpg?arena_f_auto" alt="Surfing"><video muted loop preload="none">
+    <source src="VIDEO_LINK" type="video/mp4">
+  </video><p><B>Click Me!!!</B><br>surfing in Bali</p></div>
+
+    <div class="bucket-card" style="--i:1" data-link="https://youtu.be/QKiZI5iDx4I?si=XPZYKtpDGHjqAoRh"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/14/f5/f9/caption.jpg?w=1200&h=-1&s=1" alt="Balloon"><video muted loop preload="none">
+    <source src="VIDEO_LINK" type="video/mp4">
+  </video><p><B>Click Me!!!</B><br>Hot Air Balloon in Turkey</p></div>
+
+    <div class="bucket-card" style="--i:1" data-link="https://www.youtube.com/watch?v=-tYmaZCxpzU"><img src="https://oceanjar-new.s3.ap-south-1.amazonaws.com/Bali_Swing_6bd154314e.jpg" alt="Safari"><video muted loop preload="none">
+    <source src="VIDEO_LINK" type="video/mp4">
+  </video><p><B>Click Me!!!</B><br>Bali Swing</p></div>
+
+    <div class="bucket-card" style="--i:1" data-link="https://www.youtube.com/watch?v=nhvd6L369PE"><img src="https://musictech.com/wp-content/uploads/2023/12/the-sphere-vegas@2000x1500.jpg" alt="sphere"><video muted loop preload="none">
+    <source src="VIDEO_LINK" type="video/mp4">
+  </video><p><B>Click Me!!!</B><br>Visit Sphere Theatre in Las vegas</p></div>
+
+    <div class="bucket-card" style="--i:1" data-link="https://www.youtube.com/watch?v=zRrSsD9-L0g"><img src="https://res.cloudinary.com/nyonair/image/upload/v1753733692/nyc-experience-helicopter-ride-file-999-0-1753733691436.jpg" alt="Helicopter"><video muted loop preload="none">
+    <source src="VIDEO_LINK" type="video/mp4">
+  </video><p><B>Click Me!!!</B><br>Helicopter Ride in NYC</p></div>
+
+    <div class="bucket-card" style="--i:1" data-link="https://www.youtube.com/watch?v=pfCGbFwh89o"><img src="https://cdn.prod.website-files.com/652d0405192ba076b04f74a3/656b5108d54edc5c99f86b14_best-river-cruises-paris-featured-image.webp" alt="Boat"><video muted loop preload="none">
+    <source src="VIDEO_LINK" type="video/mp4">
+  </video><p><B>Click Me!!!</B><br>Boat ride in Paris</p></div>
+
+    <div class="bucket-card" style="--i:1" data-link="https://www.youtube.com/watch?v=MnLq_FQKmto"><img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/15/83/fb/29.jpg" alt="choclate"><video muted loop preload="none">
+    <source src="VIDEO_LINK" type="video/mp4">
+  </video><p><B>Click Me!!!</B><br>Lindt choclate Factory tour in Swizzerland</p></div>
+
+  </section>
+
+  <script>
+    // Scroll navbar background (Netflix-style)
+    // Navbar scroll
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+
+  if (window.scrollY > 5) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+// Hover video play
+document.querySelectorAll(".bucket-card").forEach(card => {
+  const video = card.querySelector("video");
+
+  card.addEventListener("mouseenter", () => {
+    if(video){
+      video.currentTime = 0;
+      video.play();
+    }
+  });
+
+  card.addEventListener("mouseleave", () => {
+    if(video){
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+
+  // Click → open YouTube
+  card.addEventListener("click", () => {
+    const link = card.dataset.link;
+    if(link){
+      window.open(link, "_blank");
+    }
+  });
+});
+  </script>
+
+</body>
+</html>

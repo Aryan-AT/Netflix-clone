@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Who's Watching?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS LINK -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="splash">
+    <h1>Who's watching?</h1>
+
+    <div class="profile" id="openSite">
+      <div class="box">
+        <span class="eye left"></span>
+        <span class="eye right"></span>
+        <span class="smile"></span>
+      </div>
+      <p>Aryia</p>
+    </div>
+  </div>
+
+<!-- MAIN WEBSITE (HERO SECTION) -->
+<div id="main">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Saniya Ke Kahaniya</div>
+
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="series.html">Series</a>
+      <a href="movies.html">Movies</a>
+      <a href="games.html">Games</a>
+      <a href="popular.html">Popular</a>
+      <a href="mylist.html">My List</a>    
+   </nav>
+
+    <div class="nav-right">
+      <span class="icon">🔍</span>
+      <span class="icon">🔔</span>
+      <div class="profile-icon">😊</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+
+      <h1>This was meant to happen</h1>
+
+      <div class="meta">
+        <span class="match">98% Match</span>
+        <span>2026</span>
+        <span class="badge">UA 16+</span>
+        <span>1 Season</span>
+      </div>
+
+      <div class="rank">
+        <span class="top10">TOP 10</span>
+        <span>#1 in Movies Today</span>
+      </div>
+
+      <p class="description">
+        In a place far from the world, we found our own paradise.
+        Just us, wrapped in simplicity, where love felt easy and endless.
+      </p>
+
+      <div class="buttons">
+        <button class="play" id="playBtn">▶ Play</button>
+        <button class="info">ℹ More Info</button>
+      </div>
+
+	<!-- VIDEO PLAYER OVERLAY -->
+      <div id="videoPlayer">
+        <video id="video" controls>
+           <source src="videos/trailer.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+        </video>
+        <span id="closeVideo">✕</span>
+      </div>
+
+    </div>
+  </section>
+
+<!-- ROW SECTION -->
+<section class="row">      <!-- Row 1 -->
+  <h2>Who is Aryia</h2>
+
+  <div class="row-posters">
+
+    <!-- CARD 1 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/p1.jpg">
+        <source src="videos/p1.mp4" type="video/mp4">
+      </video>
+      <p><span class="green">100% Match</span><br>Forest, breeze and you</p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/p2.jpg">
+        <source src="videos/p2.mp4" type="video/mp4">
+      </video>
+      <p>Hero<br>She is me… just small and cute</p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/p3.jpg">
+        <source src="videos/p3.mp4" type="video/mp4">
+      </video>
+      <p><span class="green">New Season</span><br>Our kind of Paradise</p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/p4.jpg">
+        <source src="videos/p4.mp4" type="video/mp4">
+      </video>
+      <p>Action/Comedy<br>Do we need a topic for bakwas?</p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/p5.jpg">
+        <source src="videos/p5.mp4" type="video/mp4">
+      </video>
+      <p><span class="green">New Character</span><br>Babe, can we stay here forever?</p>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/p6.jpg">
+        <source src="videos/p6.mp4" type="video/mp4">
+      </video>
+      <p>Drama · 99%<br>Personal time = Pure love</p>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/p7.jpg">
+        <source src="videos/p7.mp4" type="video/mp4">
+      </video>
+      <p>Nostalgia<br>I wish this never ends</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="row">      <!-- Row 2 -->
+  <h2>Who is Saniya</h2>
+
+  <div class="row-posters">
+
+    <!-- CARD 1 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/s1.jpg">
+        <source src="videos/s1.mp4" type="video/mp4">
+      </video>
+      <p><span class="green">1000 Likes</span><br>Just the Tik Tok girl</p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/s2.jpg">
+        <source src="videos/s2.mp4" type="video/mp4">
+      </video>
+      <p>No Views<br>Pretty little baby</p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/s3.jpg">
+        <source src="videos/s3.mp4" type="video/mp4">
+      </video>
+      <p><span class="green">Do or Don't Share</span><br>chote bachi ho kya</p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/s4.jpg">
+        <source src="videos/s4.mp4" type="video/mp4">
+      </video>
+      <p>Subscribe<br>Mai to nazuk kali hu</p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/s5.jpg">
+        <source src="videos/s5.mp4" type="video/mp4">
+      </video>
+      <p><span class="green">Sanu</span><br>tane mara par bharoso nahi ke</p>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/s6.jpg">
+        <source src="videos/s6.mp4" type="video/mp4">
+      </video>
+      <p>Cyring Girl<br>merko rona arra</p>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/s7.jpg">
+        <source src="videos/s7.mp4" type="video/mp4">
+      </video>
+      <p>Always Sleeping<br>yaar mai itna bhe nahi sote hy yaar</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="row">      <!-- Row 3 -->
+  <h2>What makes her Saniya</h2>
+
+  <div class="row-posters">
+
+    <!-- CARD 1 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/h1.jpg">
+        <source src="videos/h1.mp4" type="video/mp4">
+      </video>
+      <p><span class="green">Papa Ki Pari</span><br>Mai dekhlunge attitude girlyyy</p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/h2.jpg">
+        <source src="videos/h2.mp4" type="video/mp4">
+      </video>
+      <p>Aman Bhayya<br>ko to abb mai he satauge pure zindagi. phas gaye</p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/h3.jpg">
+        <source src="videos/h3.mp4" type="video/mp4">
+      </video>
+      <p><span class="green">Bismillah</span><br>Ya Ali ya Ali.....</p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/h4.jpg">
+        <source src="videos/h4.mp4" type="video/mp4">
+      </video>
+      <p>Ayye hayye<br>inko to mai dinner me pakakar kha jau</p>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/h5.jpg">
+        <source src="videos/h5.mp4" type="video/mp4">
+      </video>
+      <p><span class="green">The lovely place</span><br>Merko rukna tha, lekin janna pada</p>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/h6.jpg">
+        <source src="videos/h6.mp4" type="video/mp4">
+      </video>
+      <p>Mere Jaan<br>Baat jo hai usme yaha wo nahi kisi me</p>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card" data-video="videos/trailer.mp4">
+      <video muted loop preload="none" poster="images/h7.jpg">
+        <source src="videos/h7.mp4" type="video/mp4">
+      </video>
+      <p>The Fun<br>The villa I could nevery marry</p>
+    </div>
+
+  </div>
+</section>
+
+
+</div>
+
+
+  <!-- JS LINK -->
+  <script src="script.js"></script>
+</body>
+</html>
